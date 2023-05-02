@@ -65,6 +65,8 @@ function display_responsive_image( $image_id, $alt = '', $image_sizes = null, $m
 			);
 		}
 
+		$image_sizes = is_array($image_sizes) ? $image_sizes : array($image_sizes);
+
 		if ( ! $max_width ) {
 			$max_width = '1110px';
 		}
@@ -89,8 +91,11 @@ function display_responsive_image( $image_id, $alt = '', $image_sizes = null, $m
 		$image_mini_src = wp_get_attachment_image_src( $image_id, 'gallery_thumb' );
 		$srcset        .= $image_mini_src[0] . ' 16w';
 		?>
+
+		
+		
 			<img 
-				<?php if ( ! $svg ) : ?>
+				<?php if ( ! $svg && isset($images_src[ $max_width ]) ) : ?>
 					width="<?php echo $images_src[ $max_width ][1]; ?>"
 					height="<?php echo $images_src[ $max_width ][2]; ?>"
 				<?php endif; ?>
