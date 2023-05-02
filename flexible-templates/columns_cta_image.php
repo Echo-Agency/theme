@@ -48,7 +48,7 @@
 						$img_max_width = '690px';
 				?>
 					<div class="col-lg-6 columns_cta_image_img">
-						<?php display_responsive_image( $cta_image, '', $image_sizes, $max_width ); ?>
+						<?php display_responsive_image( $cta_image, '', $image_sizes, $img_max_width ); ?>
 						<?php if ( $cta_image_description ) : ?>
 								<?php echo $cta_image_description; ?>
 						<?php endif; ?>
