@@ -20,7 +20,7 @@ if ( $bg_image ) {
 <?php if ( $full_width ) : ?>
 	</div> <!-- end row for full width-->
 	</div> <!-- end container for full width -->
-	<div class="row p-0">
+	<div class="container-fluid p-0">
 <?php endif; ?>
 
 
