@@ -15,6 +15,6 @@ if ( $button_text && $button_url ) {
 	// $link_title  = esc_html( $button_url['title'] );
 	$link_target = $button_url['target'] ? esc_attr( $button_url['target'] ) : '_self';
 
-	echo '<a href="' . $link_url . '" title="' . $button_text . '" class="btn ' . ( ( $button_class ) ? $button_class : 'btn-primary' ) . ( ( $cta_background ) ? ' background-' . $cta_background : '' ) . '" target="' . $link_target . '">' . $icon . $button_text . $icon2 . '</a>';
+	echo '<a href="' . $link_url . '" title="' . $button_text . '" class="btn ' . ( ( $button_class ) ? $button_class : 'btn-primary' ) . ( ( isset($cta_background) ) ? ' background-' . $cta_background : '' ) . '" target="' . $link_target . '">' . $icon . $button_text . $icon2 . '</a>';
 }
 
