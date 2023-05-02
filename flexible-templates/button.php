@@ -8,8 +8,8 @@ if ( $button_text && $button_url ) {
 		$button_icon_code2 = icon_power_left();
 	}
 
-	$icon = $button_icon_code ? $button_icon_code : null;
-	$icon2 = $button_icon_code2 ? $button_icon_code2 : null;
+	$icon = isset($button_icon_code) ? $button_icon_code : null;
+	$icon2 = isset($button_icon_code2) ? $button_icon_code2 : null;
 	
 	$link_url = esc_url( $button_url['url'] );
 	// $link_title  = esc_html( $button_url['title'] );
