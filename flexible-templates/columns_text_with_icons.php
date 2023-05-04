@@ -57,7 +57,7 @@ if ( $bg_color ) {
 			?>
 
 			<div class="columns_text_with_icons-icon <?php echo ( $icon_width ) ? $icon_width : 'col-md-6'; ?> ">
-			<?php if ( $icon_link_url["url"] ) : ?>
+			<?php if ( !empty($icon_link_url) ) : ?>
 				<a title="<?php echo $icon_title; ?>" href="<?php echo $icon_link_url["url"]; ?>">
 			<?php endif; ?>
 				<div class="<?php echo $hide_borders ? '' : 'columns_text_with_icons-icon-border'; ?>">
