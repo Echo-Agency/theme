@@ -21,7 +21,7 @@ $uuid = uniqid();
 
 <div class="wrapper" id="wrapper-case_study">
 
-	<header class="fullwidth-header<?php echo ( $header_img_enabled ) ? '' : ' default-header'; ?>"<?php echo ( $style ) ?? ''; ?>>
+	<header class="fullwidth-header<?php echo ( !empty($header_img_enabled) ) ? '' : ' default-header'; ?>"<?php echo ( $style ) ?? ''; ?>>
 
 			<div class="video-bg">
 				<div class="video-cover"></div>
