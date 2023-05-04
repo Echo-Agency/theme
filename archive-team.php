@@ -21,7 +21,7 @@ $team_heading = get_field( 'team_heading', 'option' );
 
 <div class="wrapper" id="full-width-page-wrapper">
 
-	<header class="fullwidth-header<?php echo ( $header_img_enabled ) ? '' : ' default-header'; ?>"<?php echo ( $style ) ?? ''; ?>>
+	<header class="fullwidth-header<?php echo ( !empty($header_img_enabled) ) ? '' : ' default-header'; ?>"<?php echo ( $style ) ?? ''; ?>>
 			
 			<?php if ( get_field( 'header_background_image_enable' ) && get_field( 'header_background_image_darken' ) ) : ?>
 				<div class="bg_image_darken"></div>

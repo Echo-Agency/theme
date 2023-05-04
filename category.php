@@ -50,7 +50,7 @@ $category_description = get_the_archive_description();
 
 
 <div class="wrapper" id="wrapper-category">
-<header class="fullwidth-header<?php echo ( $header_img_enabled ) ? '' : ' default-header'; ?>"<?php echo ( $style ) ?? ''; ?>>
+<header class="fullwidth-header<?php echo ( !empty($header_img_enabled) ) ? '' : ' default-header'; ?>"<?php echo ( $style ) ?? ''; ?>>
 			
 			<?php if ( get_field( 'header_background_image_enable' ) && get_field( 'header_background_image_darken' ) ) : ?>
 				<div class="bg_image_darken"></div>
