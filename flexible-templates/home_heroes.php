@@ -9,7 +9,7 @@
 <div class="row p-0">
 	<div class="container-fluid home_heroe">
 		<div class="container">
-			<div class="row vertical-middle">
+			<div class="row">
 				<div class="flexible-content col-lg-12">
 					<div class="row">
 						<div class="col-md-12 col-lg-5 counter">
