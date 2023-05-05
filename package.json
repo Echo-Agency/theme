@@ -58,5 +58,8 @@
     "gulp-purgecss": "^4.0.3",
     "gulp-wp-pot": "^2.5.0",
     "purgecss-with-wordpress": "^4.0.3"
+  },
+  "overrides": {
+    "graceful-fs": "^4.2.10"
   }
 }
