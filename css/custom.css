@@ -46,6 +46,13 @@
   text-transform: none;
 }
 
+.page-id-2 #wrapper-navbar{
+    position: sticky;
+    z-index: 9999;
+    -webkit-box-shadow: 0px 14px 33px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 14px 33px rgba(0, 0, 0, 0.1); 
+}
+
 @media (min-width: 576px) {
   body.higher-header .wrapper .fullwidth-header:not(.post-type-archive-case_study) {
     min-height: 500px !important;
