@@ -27,7 +27,7 @@
 						</div>
 						<?php if ( $line2 ) : ?>
 							<div class="col-lg-12 line2">
-								<h1><?php echo $line2; ?></h1>
+								<?php echo $line2; ?>
 							</div>
 						<?php endif; ?>
 					</div>
