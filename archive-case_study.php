@@ -11,24 +11,26 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header();
+
+$style = null;
 $container            = get_theme_mod( 'understrap_container_type' );
 $case_studies_header  = esc_html( get_field( 'case_studies_header', 'option' ) );
 $case_studies_lead    = get_field( 'case_studies_lead', 'option' );
 $case_studies_heading_logos = get_field( 'case_studies_heading_logos', 'option' );
 $case_studies_heading = get_field( 'case_studies_heading', 'option' );
+$header_img           = get_field( 'header_img', 'option');
 $uuid = uniqid();
+
+if ( !empty($header_img) ) {
+	$style = ' style="background-image:url(\'' . esc_url( $header_img ) . '\');"';
+}
 ?>
 
 <div class="wrapper" id="wrapper-case_study">
 
-	<header class="fullwidth-header<?php echo ( !empty($header_img_enabled) ) ? '' : ' default-header'; ?>"<?php echo ( $style ) ?? ''; ?>>
-
-			<div class="video-bg">
-				<div class="video-cover"></div>
-				<div class="video" data-vbg="https://www.youtube.com/watch?v=sf7ILODhCBI"></div>
-			</div>
+	<header class="fullwidth-header<?php echo ( !empty($header_img) ) ? '' : ' default-header'; ?>"<?php echo ( $style ) ?? ''; ?>>
 			
-			<?php if ( get_field( 'header_background_image_enable' ) && get_field( 'header_background_image_darken' ) ) : ?>
+			<?php if ( !empty($header_img) ) : ?>
 				<div class="bg_image_darken"></div>
 			<?php endif; ?>
 
@@ -73,7 +75,7 @@ $uuid = uniqid();
 						</div>
 					</div>
 				<?php endif; ?>
-				<div class="flexible-content columns_hero_logotypes"<?php echo ( $style ) ?? ''; ?>>
+				<div class="flexible-content columns_hero_logotypes">
 					<div class="hero_logotypes_content">
 						<div class="hero_logotypes_slider">
 							<div id="slick-<?php echo $uuid; ?>">

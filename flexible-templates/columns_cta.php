@@ -33,7 +33,7 @@ if ( is_category() || is_tag() ) {
 
 	$cta_title        = $category_cta['category_cta_title'];
 	$cta_title_color  = esc_html( $category_cta['category_cta_title_color'] );
-	$cta_header_level = esc_html( $category_cta['cta_header_level'] );
+	// $cta_header_level = esc_html( $category_cta['cta_header_level'] );
 	$cta_header       = $category_cta['category_cta_header'];
 	$cta_content      = $category_cta['category_cta_content'];
 
