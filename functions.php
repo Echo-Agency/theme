@@ -463,7 +463,7 @@ function get_youtube_video_cover( $post_id ) {
 	$video_cover = 'https://img.youtube.com/vi/' . $youtube_id . '/maxresdefault.jpg';
 
 	?>
-		<div class="youtube_video_cover" data-lazyloaded data-bg="url('<?php echo $video_cover; ?>')" style="background-image:url('<?php echo $video_cover; ?>')">
+		<div class="youtube_video_cover" style="background-image:url('<?php echo $video_cover; ?>')">
 			<?php if ( $video_decors && $video_decors_type ) : ?>
 				<div class="youtube_video_cover_decor youtube_video_cover_decor_<?php echo $video_decors_type; ?>">
 					<div class="youtube_video_cover_decor_plus">
