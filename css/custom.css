@@ -1,113 +1,118 @@
 .video_cover {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 95%;
-    margin: 0 auto;
-    transition: 200;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto;
+  transition: 200;
+}
+
+.video_cover.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.video_cover button {
+  background: transparent;
+  border: none;
+  z-index: 50;
+  width: 100px;
+  outline: none;
+}
+
+.video_cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home_heroe{
+  min-height: auto;
+  padding-top: 60px;
+}
+
+.home_heroe .counter_header .line1 h1 {
+  font-size: 2.2rem;
+  line-height: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.home_heroe .line2 h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 0;
+  text-transform: none;
+}
+
+.home_heroe .circle-white{
+  top: 45px !important;
+  margin-top: -20px;
+}
+
+.page-id-2 #wrapper-navbar{
+    position: sticky;
+    z-index: 9999;
+    -webkit-box-shadow: 0px 14px 33px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 14px 33px rgba(0, 0, 0, 0.1); 
+}
+
+.columns_text_with_opinions.columns_text_with_opinions .columns_text_with_opinions-icon .hero-icon-link a::after{
+  width: 100%;
+  height: 100%;
+  margin-left: 0 !important;
+}
+
+@media (min-width: 576px) {
+  body.higher-header .wrapper .fullwidth-header:not(.post-type-archive-case_study) {
+    min-height: 500px !important;
   }
-  
-  .video_cover.hidden {
-    opacity: 0;
-    pointer-events: none;
+}
+
+@media (max-width: 767.98px) {
+  .home_heroe .counter_header .line1 h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 0.5rem;
   }
-  
-  .video_cover button {
-    background: transparent;
-    border: none;
-    z-index: 50;
-    width: 100px;
-    outline: none;
-  }
-  
-  .video_cover img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+}
+
+@media (min-width: 992px) {
+  .home_heroe .line2 h2 {
+    margin: 20px auto;
+    max-width: 70ch;
   }
 
   .home_heroe{
-    min-height: auto;
-    padding-top: 60px;
-  }
-  
-  .home_heroe .counter_header .line1 h1 {
-    font-size: 2.2rem;
-    line-height: 2.7rem;
-    font-weight: 700;
-    margin-bottom: 0;
-  }
-  
-  .home_heroe .line2 h2 {
-    font-size: 1.3rem;
-    font-weight: 400;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 0;
-    text-transform: none;
+      padding-top: 80px;
   }
 
-  .home_heroe .circle-white{
-    top: 45px !important;
-    margin-top: -20px;
-  }
-  
-  .page-id-2 #wrapper-navbar{
-      position: sticky;
-      z-index: 9999;
-      -webkit-box-shadow: 0px 14px 33px rgba(0, 0, 0, 0.1);
-      box-shadow: 0px 14px 33px rgba(0, 0, 0, 0.1); 
-  }
-  
-  @media (min-width: 576px) {
-    body.higher-header .wrapper .fullwidth-header:not(.post-type-archive-case_study) {
-      min-height: 500px !important;
-    }
-  }
-  
-  @media (max-width: 767.98px) {
-    .home_heroe .counter_header .line1 h1 {
-      font-size: 1.5rem;
-      line-height: 2rem;
-      margin-bottom: 0.5rem;
-    }
 }
-  
-  @media (min-width: 992px) {
-    .home_heroe .line2 h2 {
-      margin: 20px auto;
-      max-width: 70ch;
-    }
 
-    .home_heroe{
-        padding-top: 80px;
-    }
+.slick-arrow{
+  padding: 20px !important;
+  top: calc(50% - 20px) !important;
+  background-color: #001C54 !important;
+  background-size: 60% !important;
+  background-position: center !important;
+  transition: all ease-in-out 0.2s;
+  -webkit-box-shadow: 0 8px 40px rgba(0,0,0,.3);
+  box-shadow: 0 8px 40px rgba(0,0,0,.3);
+}
+.slick-arrow:hover{
+  background-size: 50% !important;
+}
 
-  }
+.slick-arrow.slick-prev{
+  background-image: url("https://echo.webo.design/wp-content/themes/understrap-child/img/svg/left-arrow-slick-white.svg") !important;
+}
+.slick-arrow.slick-next{
+  background-image: url("https://echo.webo.design/wp-content/themes/understrap-child/img/svg/right-arrow-slick-white.svg") !important;
+}
 
-  .slick-arrow{
-    padding: 20px !important;
-    top: calc(50% - 20px) !important;
-    background-color: #001C54 !important;
-    background-size: 60% !important;
-    background-position: center !important;
-    transition: all ease-in-out 0.2s;
-    -webkit-box-shadow: 0 8px 40px rgba(0,0,0,.3);
-    box-shadow: 0 8px 40px rgba(0,0,0,.3);
-  }
-  .slick-arrow:hover{
-    background-size: 50% !important;
-  }
-
-  .slick-arrow.slick-prev{
-    background-image: url("https://echo.webo.design/wp-content/themes/understrap-child/img/svg/left-arrow-slick-white.svg") !important;
-  }
-  .slick-arrow.slick-next{
-    background-image: url("https://echo.webo.design/wp-content/themes/understrap-child/img/svg/right-arrow-slick-white.svg") !important;
-  }
-  
-  

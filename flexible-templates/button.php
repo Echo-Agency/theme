@@ -1,7 +1,7 @@
 <?php
 if ( $button_text && $button_url ) {
 
-	$button_class = $button_class ? $button_class : null;
+	$button_class = !empty($button_class) ? $button_class : null;
 
 	if ( str_contains( $button_class, 'btn-big' ) ) {
 		$button_icon_code = icon_power_right();

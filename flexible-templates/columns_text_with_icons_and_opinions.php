@@ -88,7 +88,7 @@ if ( $bg_color ) {
 
 										<?php if ( $icon_link_url && $icon_link_url_text ) : ?>
 											<div class="hero-icon-link">
-												<a title="<?php echo $icon_title; ?>" href="<?php echo $icon_link_url['url']; ?>"><?php echo $icon_link_url_text; ?></a>
+												<a class="btn btn-primary" title="<?php echo $icon_title; ?>" href="<?php echo $icon_link_url['url']; ?>"><?php echo $icon_link_url_text; ?></a>
 											</div>
 										<?php endif; ?>
 									</div>
