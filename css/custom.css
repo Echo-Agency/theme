@@ -69,6 +69,12 @@
   margin-left: 0 !important;
 }
 
+.columns_steps.stepper_numbers_hidden .stepper_step.stepper_step{
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 @media (min-width: 576px) {
   body.higher-header .wrapper .fullwidth-header:not(.post-type-archive-case_study) {
     min-height: 500px !important;
