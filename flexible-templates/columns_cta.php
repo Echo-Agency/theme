@@ -102,7 +102,7 @@ $cta_image_round      = rest_sanitize_boolean( get_sub_field( 'cta_image_round' 
 
 						<?php if ( $cta_header ) : ?>
 							<div class="cta-header">
-								<?php echo '<h' . ( ( $cta_header_level ) ? $cta_header_level : '2' ) . ' class="no-toc">' . $cta_header . '</h' . ( ( $cta_header_level ) ? $cta_header_level : '2' ) . '>'; ?>
+								<?php echo '<h' . ( !empty( $cta_header_level ) ? $cta_header_level : '2' ) . ' class="no-toc">' . $cta_header . '</h' . ( ( $cta_header_level ) ? $cta_header_level : '2' ) . '>'; ?>
 							</div>
 						<?php endif; ?>
 
