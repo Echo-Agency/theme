@@ -6,20 +6,10 @@
   align-items: center;
   width: 95%;
   margin: 0 auto;
-  transition: 200;
 }
 
 .video_cover.hidden {
-  opacity: 0;
   pointer-events: none;
-}
-
-.video_cover button {
-  background: transparent;
-  border: none;
-  z-index: 50;
-  width: 100px;
-  outline: none;
 }
 
 .video_cover img {
@@ -28,6 +18,32 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: 200ms;
+}
+
+.video_cover.hidden img {
+  opacity: 0;
+}
+
+.video_cover button {
+  background: transparent;
+  border: none;
+  z-index: 50;
+  width: 100px;
+  outline: none;
+  transition: opacity 0.3s 0.3s;
+}
+
+.video_cover.hidden button {
+  opacity: 0;
+}
+
+.video_cover button svg path{
+  transition: all ease-in-out 0.2s;
+}
+
+.video_cover button:hover svg path:first-of-type {
+  fill: #001C55;
 }
 
 .home_heroe{
@@ -122,3 +138,4 @@
   background-image: url("https://echo.webo.design/wp-content/themes/understrap-child/img/svg/right-arrow-slick-white.svg") !important;
 }
 
+    

@@ -31,7 +31,7 @@
 		<?php if ( $video_iframe ) : ?>
 			<div class="row">
 				<?php if ( false == strpos( $video_iframe, 'loading="lazy"' ) ) {
-					$video_iframe = str_replace( 'iframe', 'iframe loading="lazy"', $video_iframe );
+					$video_iframe = str_replace( '<iframe', '<iframe loading="lazy" data-skip-lazy', $video_iframe );
 				}
 				?>
 
@@ -45,6 +45,8 @@
 								</button>
 								<?php display_responsive_image( $video_cover_img, '' ); ?>
 								<script>
+									
+									
 									const video_cover = document.querySelector('.video_cover')
 									let player
 
@@ -56,6 +58,7 @@
 										player.playVideo()
 										video_cover?.classList.add('hidden')
 									}
+
 								</script>
 							</div>
 						<?php endif; ?>
