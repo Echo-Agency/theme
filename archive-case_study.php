@@ -265,7 +265,7 @@ if ( !empty($header_img) ) {
 	});
 </script>
 
-<?php if ( $full_width ) : ?>
+<?php if ( isset($full_width) && $full_width ) : ?>
 	</div>
 	<div class="container"> <!-- start container -->
 	<div class="row"> <!-- start row -->
