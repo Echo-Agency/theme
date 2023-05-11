@@ -30,9 +30,8 @@
 	<?php if ( $industries || $video_iframe ) : ?>
 		<?php if ( $video_iframe ) : ?>
 			<div class="row">
-				<?php if ( false == strpos( $video_iframe, 'loading="lazy"' ) ) {
-					$video_iframe = str_replace( '<iframe', '<iframe loading="lazy" data-skip-lazy', $video_iframe );
-				}
+				<?php
+					$video_iframe = str_replace( '<iframe', '<iframe data-skip-lazy ', $video_iframe );
 				?>
 
 				<?php if ( $video_iframe ) : ?>
@@ -46,7 +45,12 @@
 								<?php display_responsive_image( $video_cover_img, '' ); ?>
 								<script>
 									
-									
+									let tag = document.createElement('script');
+
+									tag.src = "https://www.youtube.com/iframe_api";
+									let firstScriptTag = document.getElementsByTagName('script')[0];
+									firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);									
+
 									const video_cover = document.querySelector('.video_cover')
 									let player
 
