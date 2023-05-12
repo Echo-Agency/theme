@@ -103,6 +103,15 @@
     line-height: 2rem;
     margin-bottom: 0.5rem;
   }
+
+  .archive-case-study .row .hero_cases_slider_case .hero_cases_slider_case_image svg {
+    width: 50px !important;
+    height: 50px !important;
+    top: -20px !important;
+    right: -20px !important; 
+  } 
+  
+  
 }
 
 @media (min-width: 992px) {
