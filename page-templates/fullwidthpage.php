@@ -13,12 +13,11 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 
-$style              = null;
 $header_img_enabled = rest_sanitize_boolean( get_field( 'header_background_image_enable' ) );
 $header_background_image_darken = rest_sanitize_boolean( get_field( 'header_background_image_darken' ) );
 
 if ( $header_img_enabled ) {
-	$style = ' style="background-image:url(\'' . esc_url( get_field( 'header_background_image' ) ) . '\');"';
+	$header_img = esc_attr(get_field( 'header_background_image' ));
 }
 $header_override = esc_html( get_field( 'header_override' ) );
 $header_lead     = get_field( 'header_lead' );
@@ -32,10 +31,14 @@ $header_button     = get_field( 'header_button' );
 <div class="wrapper" id="full-width-page-wrapper">
 
 	<?php if ( ! is_front_page() ) : ?>
-		<header class="fullwidth-header<?php echo ( $header_img_enabled ) ? ' background-header' : ' default-header'; echo ( $header_img_enabled && $header_background_image_darken) ? ' background-header-dark' : ''; ?>"<?php echo ( $style ) ?? ''; ?>>
+		<header class="fullwidth-header<?php echo ( $header_img_enabled ) ? ' background-header' : ' default-header'; echo ( $header_img_enabled && $header_background_image_darken) ? ' background-header-dark' : ''; ?>">
 			
-			<?php if ( $header_img_enabled && $header_background_image_darken ) : ?>
-				<div class="bg_image_darken"></div>
+			<?php if ( $header_img_enabled && $header_background_image_darken && $header_img) : ?>
+				<div class="bg_image_darken">
+				</div>
+			<?php endif; ?>
+			<?php if ( $header_img_enabled && $header_img) : ?>					
+				<?php display_responsive_image( $header_img, max_width: '1140px', additional_class: 'background-header-img'  ); ?>
 			<?php endif; ?>
 
 			<div class="container">

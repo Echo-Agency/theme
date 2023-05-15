@@ -67,7 +67,7 @@ if ( $bg_color ) {
 									<div class="col-md-12 columns_text_with_icon_img col-lg-4">
 										<?php
 										if ( $icon_image ) {
-											echo wp_get_attachment_image( $icon_image['ID'], 'thumbnail_no_crop' );
+											display_responsive_image( $icon_image['ID'], '',max_width: '380px' );
 										} else {
 											echo icon_plus();
 										}

@@ -47,7 +47,7 @@ add_image_size( 'full_hd', 1920, 0, false );
 
 // add_filter( 'upload_mimes', 'add_svg_to_upload_mimes', 10, 1 );
 
-function display_responsive_image( $image_id, $alt = '', $image_sizes = null, $max_width = null, $svg = false, $lazy = true ) {
+function display_responsive_image( $image_id, $alt = '', $image_sizes = null, $max_width = null, $svg = false, $lazy = true, $additional_class = null ) {
 	if ( ! $image_id ) {
 		$image_id = get_field( 'default_image', 'options' );
 	}
@@ -98,11 +98,13 @@ function display_responsive_image( $image_id, $alt = '', $image_sizes = null, $m
 				<?php if ( ! $svg && isset($images_src[ $max_width ]) ) : ?>
 					width="<?php echo $images_src[ $max_width ][1]; ?>"
 					height="<?php echo $images_src[ $max_width ][2]; ?>"
+					<?php echo isset($additional_class) ? 'class="' . $additional_class . ' " ' : ''; ?>
 				<?php endif; ?>
 				 sizes="<?php echo $sizes; ?>"
 				 srcset="<?php echo $srcset; ?>"
 				 alt="<?php echo $alt; ?>"
 				 title="<?php echo $alt; ?>"
+				 <?php echo isset($additional_class) ? 'class="' . $additional_class . ' " ' : ''; ?>
 			 <?php echo ( $lazy ) ? ' loading="lazy" ' : ''; ?>
 				 />
 		<?php
