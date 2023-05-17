@@ -171,6 +171,19 @@
   margin-bottom: 20px;
 }
 
+.columns_gallery_lightbox .decor.decor-multiply{
+  z-index: 0;
+  right: -10px !important;
+}
+
+.page-template-ebook .columns_images .decor.decor-power.decor-power-second{
+  right: -35px!important;
+}
+
+.page-template-ebook .columns_images .decor.decor-plus{
+  right: -10px !important;
+}
+
 @media (min-width: 576px) {
   body.higher-header .wrapper .fullwidth-header:not(.post-type-archive-case_study) {
     min-height: 500px !important;
@@ -190,8 +203,6 @@
     top: -20px !important;
     right: -20px !important; 
   } 
-  
-  
 }
 
 @media (min-width: 992px) {
@@ -205,3 +216,17 @@
   }
 
 }   
+
+@media (min-width: 1200px) {
+  .columns_image_text_cta .columns_image_text_cta_second_row{
+    top: -35px !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .columns_gallery_lightbox .decor.decor-multiply,
+  .page-template-ebook .columns_images .decor.decor-power.decor-power-second,
+  .page-template-ebook .columns_images .decor.decor-plus{
+    right: -100px !important;
+  }
+}  
