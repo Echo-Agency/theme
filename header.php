@@ -35,7 +35,7 @@ if ( is_post_type_archive( 'case_study' ) ) {
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
 
 	<!-- <link rel="preload" href="<?php // echo get_stylesheet_directory_uri() . '/css/child-theme.min.purged.css'; ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<noscript><link rel="stylesheet" href="<?php // echo get_stylesheet_directory_uri() . '/css/child-theme.min.purged.css'; ?>"></noscript> -->
