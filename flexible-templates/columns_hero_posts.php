@@ -30,7 +30,7 @@ if ( $bg_enabled && $bg_color ) {
 		<div class="hero_with_text_content row">
 			<div class="col-lg-12 hero_with_text_heading">
 				<span class="hero-title <?php echo 'text-' . $title_color; ?>"><?php echo $title; ?></span>
-				<h2 class="hero-header"><?php echo $header; ?></h2>
+				<div class="hero-header"><?php echo $header; ?></div>
 				<p class="hero-descriptions"><?php echo $description; ?></p>
 			</div>
 			

@@ -60,7 +60,7 @@ if ( $bg_image ) {
 			<?php echo $title; ?>
 		</div>
 	
-		<div class="col-lg-12 hero-opinion-header h3">
+		<div class="col-lg-12 hero-opinion-header h2">
 			<?php echo $header; ?>
 		</div>
 

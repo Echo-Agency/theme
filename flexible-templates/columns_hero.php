@@ -46,6 +46,7 @@ if ( $bg_enabled && $bg_color ) {
 				$icon_code          = get_sub_field( 'icon_code' );
 				$icon_image         = esc_html( get_sub_field( 'icon_image' ) );
 				$icon_title         = esc_html( get_sub_field( 'icon_title' ) );
+				$icon_title_tag     = get_sub_field( 'icon_title_tag' );
 				$icon_content       = get_sub_field( 'icon_content' );
 				$icon_link_url      =  get_sub_field( 'icon_link_url');
 				$icon_link_url_text = esc_html( get_sub_field( 'icon_link_url_text' ) );
@@ -75,9 +76,9 @@ if ( $bg_enabled && $bg_color ) {
 							</div>
 							<div class="col-sm-12<?php echo ( 'left' == $icon_position ) ? ' col-md-9' : ' text-center'; ?>">
 								
-								<?php if ( $icon_title ) : ?>
-									<p class="hero-icon-title">
-										<?php if ( $icon_link_url ) : ?>
+								<?php if ( $icon_title && $icon_title_tag ) : ?>
+									<?php echo '<' . $icon_title_tag .' class="hero-icon-title" >' ?>
+									<?php if ( $icon_link_url ) : ?>
 											<a title="<?php echo $icon_title; ?>" href="<?php echo $icon_link_url["url"]; ?>">
 										<?php endif; ?>
 
@@ -86,7 +87,7 @@ if ( $bg_enabled && $bg_color ) {
 										<?php if ( $icon_link_url ) : ?>
 											</a>
 										<?php endif; ?>
-										</p>
+									<?php echo '</' . $icon_title_tag .'>' ?>
 								<?php endif; ?>
 
 								<?php if ( $icon_content ) : ?>

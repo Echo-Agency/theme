@@ -153,6 +153,7 @@
 .fullwidth-header .entry-title *,
 .stepper_header *,
 .stepper_step_title_heading *,
+.hero-header *,
 .text-inherit *{
   font-size: inherit !important;
   font-weight: inherit !important;
