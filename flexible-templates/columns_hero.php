@@ -76,7 +76,7 @@ if ( $bg_enabled && $bg_color ) {
 							<div class="col-sm-12<?php echo ( 'left' == $icon_position ) ? ' col-md-9' : ' text-center'; ?>">
 								
 								<?php if ( $icon_title ) : ?>
-									<h3 class="hero-icon-title">
+									<p class="hero-icon-title">
 										<?php if ( $icon_link_url ) : ?>
 											<a title="<?php echo $icon_title; ?>" href="<?php echo $icon_link_url["url"]; ?>">
 										<?php endif; ?>
@@ -86,7 +86,7 @@ if ( $bg_enabled && $bg_color ) {
 										<?php if ( $icon_link_url ) : ?>
 											</a>
 										<?php endif; ?>
-									</h3>
+										</p>
 								<?php endif; ?>
 
 								<?php if ( $icon_content ) : ?>

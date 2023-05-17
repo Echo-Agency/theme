@@ -149,6 +149,27 @@
   color: #E7EBF4;
 }
 
+.additional-heading *,
+.fullwidth-header .entry-title *,
+.stepper_header *,
+.stepper_step_title_heading *,
+.text-inherit *{
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  color: inherit !important;
+}
+
+.content-inline *{
+  display: inline !important;
+}
+
+#wrapper-footer-full p.widget-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #001c54;
+  margin-bottom: 20px;
+}
+
 @media (min-width: 576px) {
   body.higher-header .wrapper .fullwidth-header:not(.post-type-archive-case_study) {
     min-height: 500px !important;

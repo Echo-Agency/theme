@@ -5,7 +5,7 @@
 	$decor_color = esc_html( get_sub_field( 'text_column_decor_color' ) );
 	$title              = esc_html( get_sub_field( 'text_column_title' ) );
 	$text_column_number = esc_html( get_sub_field( 'text_column_number' ) );
-	$header             = esc_html( get_sub_field( 'text_column_header' ) );
+	$header             = get_sub_field( 'text_column_header' );
 	$header_level       = esc_html( get_sub_field( 'text_column_header_level' ) );
 	$no_toc             = rest_sanitize_boolean( get_sub_field( 'no_toc' ) );
 	$content            = get_sub_field( 'text_column_content' );
@@ -37,9 +37,12 @@
 			<?php
 		endif;
 
-		if ( $header ) :
-			echo '<h' . $header_level . ' class="additional-heading' . ( ( $no_toc ) ? ' no-toc' : '' ) . '">' . $header . '</h' . $header_level . '>';
-		endif;
+		if ( $header ){
+			if(is_single()){
+				echo '<h' . $header_level . ' class="additional-heading' . ( ( $no_toc ) ? ' no-toc' : '' ) . '">' . $header . '</h' . $header_level . '>';
+			}
+			else echo '<div class="additional-heading' . ( ( $no_toc ) ? ' no-toc' : '' ) . '">' . $header . '</div>';
+		}
 
 		if ( $content ) {
 			echo '<div class="columns_text_content">' . $content . '</div>';

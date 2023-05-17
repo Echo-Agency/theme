@@ -33,7 +33,7 @@ if ( is_category() || is_tag() ) {
 
 	$cta_title        = $category_cta['category_cta_title'];
 	$cta_title_color  = esc_html( $category_cta['category_cta_title_color'] );
-	// $cta_header_level = esc_html( $category_cta['cta_header_level'] );
+	$cta_header_level = esc_html( $category_cta['cta_header_level'] );
 	$cta_header       = $category_cta['category_cta_header'];
 	$cta_content      = $category_cta['category_cta_content'];
 
@@ -100,11 +100,15 @@ $cta_image_round      = rest_sanitize_boolean( get_sub_field( 'cta_image_round' 
 							</div>
 						<?php endif; ?>
 
-						<?php if ( $cta_header ) : ?>
+						<?php if ( $cta_header ) { ?>
 							<div class="cta-header">
-								<?php echo '<h' . ( !empty( $cta_header_level ) ? $cta_header_level : '2' ) . ' class="no-toc">' . $cta_header . '</h' . ( ( $cta_header_level ) ? $cta_header_level : '2' ) . '>'; ?>
+							<?php 
+								if(is_single()){
+									echo '<h' . $cta_header_level . ' class="no-toc">' . $cta_header . '</h' . $cta_header_level . '>';
+								}
+								else echo '<div class="no-toc h2">' . $cta_header . '</div>'; ?>
 							</div>
-						<?php endif; ?>
+						<?php } ?>
 
 						<?php if ( $cta_content ) : ?>
 							<div class="cta-content">

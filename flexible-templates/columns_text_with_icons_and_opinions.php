@@ -30,7 +30,7 @@ if ( $bg_color ) {
 	endif;
 
 	if ( $header ) :
-		echo '<h2 class="additional-heading">' . $header . '</h2>';
+		echo '<div class="additional-heading">' . $header . '</div>';
 	endif;
 
 	if ( $content ) :

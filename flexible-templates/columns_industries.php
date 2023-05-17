@@ -16,7 +16,7 @@
 		<div class="row">
 			<?php if ( $header ) : ?>
 				<div class="col-lg-12">
-					<h2 class="additional-heading"><?php echo $header; ?></h2>
+					<div class="additional-heading"><?php echo $header; ?></div>
 				</div>
 			<?php endif; ?>
 			<?php if ( $description ) : ?>

@@ -2,8 +2,8 @@
 	$width       = esc_attr( get_sub_field( 'width' ) );
 	$anchor       = esc_html( get_sub_field( 'anchor' ) );
 	$image       = intval( get_sub_field( 'image' ) );
-	$header_level       = esc_html( get_sub_field( 'header_level' ) );
-	$header             = esc_html( get_sub_field( 'header' ) );
+	// $header_level       = esc_html( get_sub_field( 'header_level' ) );
+	$header             = get_sub_field( 'header' );
 	$content            = get_sub_field( 'content' );
 	$cta_title            = get_sub_field( 'cta_title' );
 	$cta_header            = get_sub_field( 'cta_header' );
@@ -34,7 +34,8 @@
 		<?php if ( $header || $content ) : ?>
 			<div class="col-lg-6">
 				<?php if ( $header ) {
-					echo '<h' . $header_level . ' class="additional-heading' . '">' . $header . '</h' . $header_level . '>';
+					// echo '<h' . $header_level . ' class="additional-heading' . '">' . $header . '</h' . $header_level . '>';
+					echo '<div class="additional-heading" >' . $header . '</div>';
 				}
 					
 				if ( $content ) {

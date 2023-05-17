@@ -19,7 +19,7 @@ $header_background_image_darken = rest_sanitize_boolean( get_field( 'header_back
 if ( $header_img_enabled ) {
 	$header_img = esc_attr(get_field( 'header_background_image' ));
 }
-$header_override = esc_html( get_field( 'header_override' ) );
+$header_override = get_field( 'header_override' );
 $header_lead     = get_field( 'header_lead' );
 $header_text     = get_field( 'header_text' );
 $header_button     = get_field( 'header_button' );
@@ -52,7 +52,7 @@ $header_button     = get_field( 'header_button' );
 
 						<?php
 						if ( $header_override ) {
-							echo '<h1 class="entry-title">' . $header_override . '</h1>';
+							echo '<div class="entry-title">' . $header_override . '</div>';
 						} else {
 							if ( ! post_password_required( get_the_ID() ) ) :
 								the_title( '<h1 class="entry-title">', '</h1>' );

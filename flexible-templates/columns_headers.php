@@ -7,7 +7,7 @@
 	$section_name_text_color = esc_html( get_sub_field( 'section_name_text_color' ) );
 	$title                   = get_sub_field( 'title' );
 	$header                  = get_sub_field( 'header' );
-	$header_level            = esc_html( get_sub_field( 'header_level' ) );
+	// $header_level            = esc_html( get_sub_field( 'header_level' ) );
 	$no_toc                  = rest_sanitize_boolean( get_sub_field( 'no_toc' ) );
 	$content                 = wp_kses_post( get_sub_field( 'intro' ) );
 	$header_anchor           = wp_kses_post( get_sub_field( 'header_anchor' ) );
@@ -39,8 +39,8 @@
 	<?php endif; ?>
 
 	<?php if ( $header ) : ?>
-		<div class="headers-header">
-			<?php echo '<h' . $header_level . ' class="' . ( ( $no_toc ) ? ' no-toc' : '' ) . '">' . $header . '</h' . $header_level . '>'; ?>
+		<div class="headers-header <?php echo ( ( $no_toc ) ? ' no-toc' : '' ) ;?> ">
+			<?php echo $header; ?>
 		</div>
 	<?php endif; ?>
 

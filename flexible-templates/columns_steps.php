@@ -20,7 +20,7 @@
 		<div class="stepper_header_container col-md-12">
 
 			<span class="stepper_title <?php echo 'text-' . $stepper_color; ?>"><?php echo $stepper_title; ?></span>
-			<h2 class="stepper_header<?php echo ( ( $no_toc ) ? ' no-toc' : '' ); ?>"><?php echo $stepper_header; ?></h2>
+			<div class="stepper_header<?php echo ( ( $no_toc ) ? ' no-toc' : '' ); ?>"><?php echo $stepper_header; ?></div>
 			<div class="stepper_content"><?php echo $stepper_content; ?></div>
 
 		</div>
@@ -37,7 +37,7 @@
 				the_row();
 
 				$step_icon  = $stepper_icons_view ? get_sub_field( 'step_icon' ) : null;
-				$step_title = esc_html( get_sub_field( 'step_title' ) );
+				$step_title = get_sub_field( 'step_title' ) ;
 				$step_text  = get_sub_field( 'step_text' );
 
 				?>
@@ -65,7 +65,7 @@
 							<?php endif; ?>
 
 							<div class="stepper_step_title <?php echo $step_icon ? 'col-md-12 col-lg-6' : 'col-md-3 col-lg-5' ;?>">
-								<h2 class="stepper_step_title_heading"><?php echo $step_title; ?></h2>
+								<div class="stepper_step_title_heading"><?php echo $step_title; ?></div>
 							</div>
 						
 							<div class="stepper_step_text <?php echo $step_icon ? 'col-md-12 col-lg-5' : 'col-md-9 col-lg-7' ;?>">

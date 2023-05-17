@@ -28,7 +28,7 @@
 
 						$accordion_icon_code = get_sub_field( 'icon_code' );
 						$accordion_image     = esc_html( get_sub_field( 'icon_image' ) );
-						$accordion_title     = esc_html( get_sub_field( 'accordion_title' ) );
+						$accordion_title     = get_sub_field( 'accordion_title' );
 						$accordion_content   = get_sub_field( 'accordion_content' );
 						?>
 
@@ -46,7 +46,7 @@
 
 								?>
 
-									<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse<?php echo $uuid . '-' . get_row_index(); ?>" <?php echo ( 1 == get_row_index() ) ? 'aria-expanded="true"' : ''; ?>  aria-controls="collapse<?php echo $uuid . '-' . get_row_index(); ?>">
+									<button class="btn btn-link collapsed text-inherit content-inline" data-toggle="collapse" data-target="#collapse<?php echo $uuid . '-' . get_row_index(); ?>" <?php echo ( 1 == get_row_index() ) ? 'aria-expanded="true"' : ''; ?>  aria-controls="collapse<?php echo $uuid . '-' . get_row_index(); ?>">
 									<?php
 										echo $rowCount . '. ' . $accordion_title;
 									?>
