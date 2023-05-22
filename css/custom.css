@@ -58,7 +58,7 @@
   margin-bottom: 0;
 }
 
-.home_heroe .line2 h2 {
+.home_heroe .line2 > * {
   font-size: 1.3rem;
   font-weight: 400;
   text-align: center;
@@ -206,7 +206,7 @@
 }
 
 @media (min-width: 992px) {
-  .home_heroe .line2 h2 {
+  .home_heroe .line2 > * {
     margin: 20px auto;
     max-width: 70ch;
   }
