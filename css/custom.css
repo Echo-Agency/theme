@@ -46,9 +46,36 @@
   fill: #001C55;
 }
 
+.home_heroe-row{
+  padding-bottom: 25px;
+  overflow: hidden;
+}
+
+.home_heroe.has-decor{
+  background: #001c54;
+  color: #fff;
+}
+
+.home_heroe.has-decor strong{
+  color: #ffd000;
+}
+
 .home_heroe{
+  position: relative;
   min-height: auto;
   padding-top: 60px;
+}
+
+.home_heroe .bg-decor{
+  position: absolute;
+  bottom: 0;
+  left: auto ;
+  right: -30% ;
+  width: auto;
+  height: 220px;
+  aspect-ratio: 4/3;
+  transform: rotate(90deg);
+  opacity: 30%;
 }
 
 .home_heroe .counter_header .line1 h1 {
@@ -217,6 +244,28 @@
 
   .home_heroe{
       padding-top: 80px;
+  }
+
+  .home_heroe .bg-decor{
+    bottom: 0;
+    left: 20px ;
+    right: auto;
+    width: auto;
+    height: 100%;
+    top: auto;
+    transform: none;
+  }
+
+  .home_heroe.has-decor .line2 > * {
+    text-align: left !important;
+  }  
+
+  .home_heroe.has-decor .buttons{
+    text-align: left;
+  }
+
+  .home_heroe.has-decor .buttons .btn{
+    margin-left: 0;
   }
 
 }   
