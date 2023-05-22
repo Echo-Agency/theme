@@ -129,6 +129,10 @@
   counter-increment: stepper;
 }
 
+.columns_steps:not(.stepper-new) .stepper_step_title_heading > * {
+  margin-bottom: 0;
+}
+
 .stepper-new .stepper_step_title_heading {
   position: relative;
   padding-bottom: 30px;
