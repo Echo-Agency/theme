@@ -51,14 +51,28 @@
   overflow: hidden;
 }
 
+.home_heroe.has-decor .flexible-content {
+  z-index: 10;
+}
+
 .home_heroe.has-decor{
   background: #001c54;
   color: #fff;
 }
 
 .home_heroe.has-decor strong{
-  color: #ffd000;
+  color: #ffd100;
 }
+
+.home_heroe.has-decor .btn.btn-primary{
+  color: #0E2050;
+  border: 1px solid #ffd100
+}
+
+.home_heroe.has-decor .btn.btn-primary::after{
+  background: #ffd100;
+}
+
 
 .home_heroe{
   position: relative;
