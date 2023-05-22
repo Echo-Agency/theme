@@ -15,7 +15,7 @@
 	$button_class       = get_sub_field( 'button_class' );
 ?>
 
-<div class="flexible-content columns_steps <?php echo ( $stepper_width ) ? $stepper_width : 'col-lg-12'; echo ( $stepper_numbers_hidden ) ? ' stepper_numbers_hidden' : ''; echo ( $stepper_icons_view ) ? ' stepper_icons_view' : '';?>">
+<div class="flexible-content columns_steps <?php echo ( $stepper_width ) ? $stepper_width : 'col-lg-12'; echo ( $stepper_numbers_hidden ) ? ' stepper_numbers_hidden' : ''; echo ( $stepper_icons_view ) ? ' stepper_icons_view' : ''; echo ( !is_front_page() ) ? ' stepper-new' : ''?>">
 	<div class="stepper_container">
 		<div class="stepper_header_container col-md-12">
 

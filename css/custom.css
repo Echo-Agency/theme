@@ -85,7 +85,7 @@
   margin-left: 0 !important;
 }
 
-.columns_steps.stepper_numbers_hidden .stepper_step.stepper_step{
+.stepper-new.columns_steps.stepper_numbers_hidden .stepper_step.stepper_step{
   border: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -129,12 +129,12 @@
   counter-increment: stepper;
 }
 
-.stepper_step_title_heading {
+.stepper-new .stepper_step_title_heading {
   position: relative;
   padding-bottom: 30px;
 }
 
-.stepper_step_title_heading::after{
+.stepper-new .stepper_step_title_heading::after{
   content: counter(stepper,decimal-leading-zero);
   display: block;
   position: absolute;
