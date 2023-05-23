@@ -32,13 +32,13 @@ $header_button     = get_field( 'header_button' );
 
 	<?php if ( ! is_front_page() ) : ?>
 		<header class="fullwidth-header<?php echo ( $header_img_enabled ) ? ' background-header' : ' default-header'; echo ( $header_img_enabled && $header_background_image_darken) ? ' background-header-dark' : ''; ?>">
-			
+
 			<?php if ( $header_img_enabled && $header_background_image_darken && $header_img) : ?>
 				<div class="bg_image_darken">
 				</div>
 			<?php endif; ?>
-			<?php if ( $header_img_enabled && $header_img) : ?>					
-				<?php display_responsive_image( $header_img, max_width: '1140px', additional_class: 'background-header-img'  ); ?>
+			<?php if ( $header_img_enabled && $header_img) : ?>
+				<?php display_responsive_image( $header_img, '', null, '1140px', false, true, 'background-header-img'  ); ?>
 			<?php endif; ?>
 
 			<div class="container">
@@ -82,7 +82,7 @@ $header_button     = get_field( 'header_button' );
 							?>
 						<?php endif; ?>
 					</div>
-					
+
 				</div>
 			</div>
 			<div class="decor decor-power"><?php echo icon_power(); ?></div>
@@ -97,7 +97,7 @@ $header_button     = get_field( 'header_button' );
 			<div class="content-area" id="primary">
 
 				<main class="site-main" id="main" role="main">
-					
+
 					<?php if ( ! post_password_required( get_the_ID() ) ) : ?>
 						<?php
 						while ( have_posts() ) :
@@ -146,17 +146,17 @@ $header_button     = get_field( 'header_button' );
 		$website_title         = get_post_meta( get_the_ID(), '_yoast_wpseo_title', true );
 		$website_description   = get_post_meta( get_the_ID(), '_yoast_wpseo_metadesc', true );
 	?>
-	<script type='application/ld+json'> 
+	<script type='application/ld+json'>
 		{
 		"@context": "https://www.schema.org",
 		"@type": "LocalBusiness",
-		"name": "<?php echo $website_name; ?>", 
+		"name": "<?php echo $website_name; ?>",
 		"url": "<?php echo get_site_url(); ?>",
 		"logo": "<?php echo $website_logo_url; ?>",
 		"image": "<?php echo $website_logo_url; ?>",
 		"description": "<?php echo $website_title . ' - ' . $website_description; ?>",
 		"telephone": "<?php echo $website_phone; ?>",
-		"priceRange": "PLN", 
+		"priceRange": "PLN",
 		"address": {
 			"@type": "PostalAddress",
 			"streetAddress": "<?php echo $website_street; ?>",
@@ -167,7 +167,7 @@ $header_button     = get_field( 'header_button' );
 			},
 		"geo": {
 		"@type": "GeoCoordinates",
-			"latitude": 51.75755222231004, 
+			"latitude": 51.75755222231004,
 			"longitude": 19.45389061908439
 			},
 		"openingHours": "Mo, Tu, We, Th, Fr 08:00-16:30"
