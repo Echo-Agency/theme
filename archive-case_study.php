@@ -217,6 +217,11 @@ if ( !empty($header_img) ) {
 
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
+		jQuery('[data-vbg]').youtube_background({
+			'mobile': true,
+			'fit-box': true,
+			'load-background': true
+		});
 
 		jQuery('#slick-<?php echo $uuid; ?>').slick({
 			infinite: true,
