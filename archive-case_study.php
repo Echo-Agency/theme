@@ -29,7 +29,7 @@ if ( !empty($header_img) ) {
 <div class="wrapper" id="wrapper-case_study">
 
 	<header class="fullwidth-header<?php echo ( !empty($header_img) ) ? '' : ' default-header'; ?>"<?php echo ( $style ) ?? ''; ?>>
-			
+
 			<?php if ( !empty($header_img) ) : ?>
 				<div class="bg_image_darken"></div>
 			<?php endif; ?>
@@ -42,7 +42,7 @@ if ( !empty($header_img) ) {
 				}
 				?>
 					<div class="col-lg-12 entry-header">
-						
+
 						<?php if ( $case_studies_header ) : ?>
 							<h1 class="entry-title"><?php echo $case_studies_header; ?></h1>
 						<?php endif; ?>
@@ -51,7 +51,7 @@ if ( !empty($header_img) ) {
 							<div class="header-lead"><?php echo $case_studies_lead; ?></div>
 						<?php endif; ?>
 					</div>
-					
+
 				</div>
 			</div>
 			<div class="decor decor-power"><?php echo icon_power(); ?></div>
@@ -98,17 +98,17 @@ if ( !empty($header_img) ) {
 
 								if ( $clients->have_posts() ) :
 									?>
-									
+
 									<?php
 									while ( $clients->have_posts() ) :
 										$clients->the_post();
 										?>
 
-										<div class="hero_logotypes_slider_logotype">	
-											
+										<div class="hero_logotypes_slider_logotype">
+
 											<?php display_responsive_image( get_post_thumbnail_id( get_the_ID() ), get_the_title(), $image_sizes, '380px' ); ?>
-											
-											
+
+
 										</div>
 									<?php endwhile; ?>
 
@@ -172,7 +172,7 @@ if ( !empty($header_img) ) {
 						endwhile;
 						echo '</div>';
 					?>
-					
+
 
 				<?php else : ?>
 
@@ -180,21 +180,21 @@ if ( !empty($header_img) ) {
 
 				<?php endif; ?>
 
-				
+
 
 			</main><!-- #main -->
 
-			
+
 			<!-- The pagination component -->
 			<?php understrap_pagination(); ?>
 
 			<!-- Do the right sidebar check -->
 			<?php // get_template_part( 'global-templates/right-sidebar-check' ); ?>
 
-		
+
 
 	</div><!-- #content -->
-	
+
 
 	</div><!-- #archive-wrapper -->
 	<?php
@@ -210,19 +210,13 @@ if ( !empty($header_img) ) {
 	<script defer="defer" src="<?php echo get_stylesheet_directory_uri() . '/js/slick/slick.min.js'; ?>"></script>
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() . '/js/slick/slick.css'; ?>">
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() . '/js/slick/slick-theme.css'; ?>">
-	
+
 	<?php $GLOBALS['slick_scripts_loaded'] = true; ?>
 	</p>
 <?php endif; ?>
 
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
-
-		jQuery('[data-vbg]').youtube_background({
-			'mobile': true,
-			'fit-box': true,
-			'load-background': true
-		});
 
 		jQuery('#slick-<?php echo $uuid; ?>').slick({
 			infinite: true,
@@ -261,7 +255,7 @@ if ( !empty($header_img) ) {
 				// instead of a settings object
 			]
 		});
-		
+
 	});
 </script>
 

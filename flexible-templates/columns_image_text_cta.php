@@ -24,9 +24,9 @@
 					'540px'  => 'medium',
 					'300px'  => 'thumbnail',
 				);
-				
-				display_responsive_image( $image, '', $image_sizes, '1110px' );
-				
+
+				display_responsive_image( $image, '', $image_sizes, '1110px', false, false );
+
 				?>
 			</div>
 		<?php endif; ?>
@@ -37,7 +37,7 @@
 					// echo '<h' . $header_level . ' class="additional-heading' . '">' . $header . '</h' . $header_level . '>';
 					echo '<div class="additional-heading" >' . $header . '</div>';
 				}
-					
+
 				if ( $content ) {
 					echo  $content;
 				} ?>
@@ -52,7 +52,7 @@
 					<div class="columns_image_text_cta_text">
 						<?php if ( $cta_title ) : ?>
 							<div class="additional-title">
-								<?php echo $cta_title; ?>	
+								<?php echo $cta_title; ?>
 							</div>
 						<?php endif; ?>
 						<?php if ( $cta_header ) : ?>
@@ -67,10 +67,10 @@
 			<?php if ( $button_text && $button_url ) : ?>
 
 				<div class="col-lg-6 columns_image_text_cta_right">
-					<?php 
+					<?php
 						$button_class = 'btn-primary btn-big';
-						
-						require locate_template( 'flexible-templates/button.php', false, false ); 
+
+						require locate_template( 'flexible-templates/button.php', false, false );
 					?>
 				</div>
 			<?php endif; ?>
