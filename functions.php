@@ -27,8 +27,24 @@ function theme_enqueue_styles() {
 		wp_enqueue_script( 'jquery.youtube-background', get_stylesheet_directory_uri() . '/js/jquery.youtube-background.min.js', array(), $the_theme->get( 'Version' ), true );
 	}
 
+	wp_enqueue_script( 'child-understrap-scripts-yt', 'https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube.js', array(), $the_theme->get( 'Version' ), true );
+
+
 	// wp_enqueue_script('child-understrap-shuffle', get_stylesheet_directory_uri() . '/js/shuffle.min.js', array(), $the_theme->get('Version'), true);
 }
+
+add_filter('script_loader_tag', 'add_type_attribute' , 10, 3);
+
+function add_type_attribute($tag, $handle, $src) {
+    // if not your script, do nothing and return original $tag
+    if ( 'child-understrap-scripts-yt' !== $handle ) {
+        return $tag;
+    }
+    // change the script tag by adding type="module" and return it.
+    $tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
+    return $tag;
+}
+
 
 function add_child_theme_textdomain() {
 	 load_child_theme_textdomain( 'understrap', get_stylesheet_directory() . '/languages' );
@@ -71,7 +87,6 @@ if ( ! is_admin() ) {
 			'jquery-core',
 			'jquery-migrate',
 			'rate-my-post',
-			'jquery.youtube-background',
 		);
 
 		foreach ( $scripts_to_defer as $defer_script ) {
@@ -550,3 +565,4 @@ function custom_wpkses_post_tags( $tags, $context ) {
 }
 
 add_filter( 'wp_kses_allowed_html', 'custom_wpkses_post_tags', 10, 2 );
+

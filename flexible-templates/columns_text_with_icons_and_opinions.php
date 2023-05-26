@@ -36,7 +36,7 @@ if ( $bg_color ) {
 	if ( $content ) :
 		echo $content;
 	endif;
-	
+
 	$icons_count = count( get_sub_field( 'icon_with_text' ) );
 
 	if ( $icons_count ) :
@@ -67,7 +67,7 @@ if ( $bg_color ) {
 									<div class="col-md-12 columns_text_with_icon_img col-lg-4">
 										<?php
 										if ( $icon_image ) {
-											display_responsive_image( $icon_image['ID'], '',max_width: '380px' );
+											display_responsive_image( $icon_image['ID'], '', null, '380px' );
 										} else {
 											echo icon_plus();
 										}
@@ -132,7 +132,7 @@ if ( $bg_color ) {
 			</div>
 
 			<?php if ( $baner_desktop || $baner_mobile ) : ?>
-				
+
 				<div class="col-lg-12 opinion-banner my-30">
 					<?php if ( $baner_url ) : ?>
 						<a href="<?php echo $baner_url; ?>" title="<?php echo get_the_title($baner_desktop); ?>" target="_blank">

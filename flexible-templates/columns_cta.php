@@ -33,7 +33,10 @@ if ( is_category() || is_tag() ) {
 
 	$cta_title        = $category_cta['category_cta_title'];
 	$cta_title_color  = esc_html( $category_cta['category_cta_title_color'] );
-	// $cta_header_level = esc_html( $category_cta['cta_header_level'] );
+
+	if(!isset($category_cta['cta_header_level'])){$category_cta['cta_header_level'] = '3';};
+
+	$cta_header_level = esc_html( $category_cta['cta_header_level'] );
 	$cta_header       = $category_cta['category_cta_header'];
 	$cta_content      = $category_cta['category_cta_content'];
 
@@ -77,13 +80,13 @@ $cta_image_round      = rest_sanitize_boolean( get_sub_field( 'cta_image_round' 
 
 <div class="flexible-content columns_cta mt-5 background-<?php echo $cta_background; echo $cta_extra_decors_type ? ' ' . $cta_extra_decors_type : ''; echo $cta_image ? ' cta-with_image' : ''; ?>">
 	<div class="cta_content container">
-		<?php if( $cta_image ) : 
+		<?php if( $cta_image ) :
 			$image_sizes = array(
 				'540px' => 'medium',
 				'300px' => 'thumbnail',
 			);
-		
-			$img_max_width = '540px';	
+
+			$img_max_width = '540px';
 		?>
 			<div class="row">
 				<div class="col-sm-12 cta-image<?php echo $cta_image_round ? ' col-md-2 cta-image__round' : ' col-md-3'; ?>">
@@ -91,7 +94,7 @@ $cta_image_round      = rest_sanitize_boolean( get_sub_field( 'cta_image_round' 
 				</div>
 				<div class="col-sm-12 <?php echo $cta_image_round ? ' col-md-10' : ' col-md-9'; ?>">
 					<div class="row">
-				
+
 		<?php endif; ?>
 						<div class="col-lg-12<?php echo ( 'decor5' != $cta_extra_decors_type && !$cta_image ) ? ' text-center' : ''; ?>">
 						<?php if ( $cta_title ) : ?>
@@ -102,7 +105,7 @@ $cta_image_round      = rest_sanitize_boolean( get_sub_field( 'cta_image_round' 
 
 						<?php if ( $cta_header ) { ?>
 							<div class="cta-header">
-							<?php 
+							<?php
 								if(is_single()){
 									echo '<h' . $cta_header_level . ' class="no-toc">' . $cta_header . '</h' . $cta_header_level . '>';
 								}
