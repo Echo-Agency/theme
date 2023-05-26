@@ -96,8 +96,11 @@ if ( $bg_image ) {
 		</div> -->
 		
 	</div>	
-	<div class="container">
-		<div id="slick-<?php echo $uuid; ?>">
+	<div class="container hero_opinions_slider">
+		<div class="swiper-button-prev hidden-important"></div>
+		<div class="swiper-button-next hidden-important"></div>
+		<div id="swiper-<?php echo $uuid; ?>" class="swiper swiper-css-mode">
+			<div class="swiper-wrapper">
 			
 			<?php
 			if ( $opinions->have_posts() ) :
@@ -117,6 +120,7 @@ if ( $bg_image ) {
 							$exclude_from_slider   = get_field( 'exclude_from_slider' );
 						?>
 						<?php if ( !$exclude_from_slider ) : ?>
+						<div class="swiper-slide">
 							<div class="hero_opinions_slider_item">
 								<?php if ( $case_opinion_signature ) : ?>
 									<div class="col-lg-12 opinion-signature">
@@ -149,6 +153,7 @@ if ( $bg_image ) {
 								<!-- <a href="<?php // the_permalink( $post->ID ); ?>" title="<?php // the_title(); ?> " class="opinion-link"><?php // esc_html_e( 'Read More...', 'understrap' ); ?></a> -->
 								
 							</div>
+						</div>
 						<?php endif; ?>
 					
 				<?php endwhile; ?>
@@ -156,7 +161,7 @@ if ( $bg_image ) {
 			<?php else : ?>
 				<?php esc_html_e( 'It looks like nothing was found', 'understrap' ); ?>
 			<?php endif ?>
-
+			</div>
 		</div>
 	</div>
 
@@ -177,56 +182,32 @@ if ( $bg_image ) {
 	</div>
 </div>
 
-<?php if ( ! isset( $GLOBALS['slick_scripts_loaded'] ) or false === $GLOBALS['slick_scripts_loaded'] ) : ?>
-	<script defer="defer" src="<?php echo get_stylesheet_directory_uri() . '/js/slick/slick.min.js'; ?>"></script>
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() . '/js/slick/slick.css'; ?>">
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() . '/js/slick/slick-theme.css'; ?>">
-	
-	<?php $GLOBALS['slick_scripts_loaded'] = true; ?>
-	</p>
-<?php endif; ?>
-
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
-		setTimeout(function(){ 
-			jQuery('#slick-<?php echo $uuid; ?>').slick({
-				infinite: true,
-				slidesToShow: 3,
-				slidesToScroll: 1,
-				dots: false,
-				arrows: true,
-				speed: 300,
-				lazyLoad: 'ondemand',
-				autoplay: true,
-				variableWidth: false,
-				responsive: [
-					{
-					breakpoint: 1024,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1,
-					}
-					},
-					{
-					breakpoint: 768,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
-					}
-					},
-					{
-					breakpoint: 480,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
-					}
-					}
-					// You can unslick at a given breakpoint now by adding:
-					// settings: "unslick"
-					// instead of a settings object
-				]
-			});
-		}, 3500);
+		const swiper = new Swiper('#swiper-<?php echo $uuid; ?>', {
+			slidesPerView: 1,
+			speed: 300,
+			loop: true,
+			autoplay: true,
+			breakpoints: {
+				1024:{
+					slidesPerView: 3
+				}
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			on:{
+				beforeInit: function(){
+					const swiperContainer = document.querySelector('#swiper-<?php echo $uuid; ?>')
+					swiperContainer.classList.remove('swiper-css-mode')
+
+					const hiddenElements = document.querySelectorAll('.hero_opinions_slider .hidden-important')
+					hiddenElements.forEach(el=> el.classList.remove('hidden-important'))
+				}
+			}
+		})
 	});
 
 </script>

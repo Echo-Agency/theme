@@ -229,9 +229,96 @@
   right: -10px !important;
 }
 
+.swiper-css-mode .swiper-button-next,
+.swiper-css-mode .swiper-button-prev{
+  display: none !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 50%;
+  right: -5px;
+  padding: 20px !important;
+  top: 50% !important;
+  background-color: #001C54 !important;
+  background-size: 60% !important;
+  background-position: center !important;
+  transition: all ease-in-out 0.2s;
+  -webkit-box-shadow: 0 8px 40px rgba(0,0,0,.3);
+  box-shadow: 0 8px 40px rgba(0,0,0,.3);
+}
+
+.swiper-button-next {
+  background-image: url(https://agencjaecho.pl/wp-content/themes/understrap-child/img/svg/right-arrow-slick-white.svg);
+  right: -5px !important;
+}
+.swiper-button-prev {
+  background-image: url(https://agencjaecho.pl/wp-content/themes/understrap-child/img/svg/left-arrow-slick-white.svg);
+  left: -5px !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after{
+  display: none;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-size: 50% !important;
+}
+
+.columns_hero_logotypes .swiper-slide img{
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  mix-blend-mode: luminosity;
+  opacity: .5;
+}
+
+.columns_hero_logotypes .swiper-slide img:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+  mix-blend-mode: normal;
+  opacity: 1;
+}
+
+.columns_hero_logotypes,
+.hero_opinions_slider {
+  position: relative;
+}
+
+.hero_logotypes_slider_logotype {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero_opinions_slider .swiper-slide{
+  padding: 0 10px;
+}
+
+.hidden-important{
+  display: none !important;
+}
+
 @media (min-width: 576px) {
   body.higher-header .wrapper .fullwidth-header:not(.post-type-archive-case_study) {
     min-height: 500px !important;
+  }
+}
+@media (min-width: 768px){
+  .hero_logotypes_slider .swiper-css-mode .swiper-slide{
+    flex-basis: 33.33%;
+  }
+}
+@media (min-width: 1024px){
+  .hero_logotypes_slider .swiper-css-mode .swiper-slide{
+    flex-basis: 16.66%;
+  }
+
+  .hero_opinions_slider .swiper-css-mode .swiper-slide{
+    flex-basis: 33.33%;
   }
 }
 

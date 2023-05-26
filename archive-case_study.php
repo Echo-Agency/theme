@@ -78,7 +78,10 @@ if ( !empty($header_img) ) {
 				<div class="flexible-content columns_hero_logotypes">
 					<div class="hero_logotypes_content">
 						<div class="hero_logotypes_slider">
-							<div id="slick-<?php echo $uuid; ?>">
+							<div class="swiper-button-prev hidden-important"></div>
+							<div class="swiper-button-next hidden-important"></div>
+							<div id="swiper-<?php echo $uuid; ?>" class="swiper swiper-css-mode">
+								<div class="swiper-wrapper">
 
 								<?php
 
@@ -104,7 +107,7 @@ if ( !empty($header_img) ) {
 										$clients->the_post();
 										?>
 
-										<div class="hero_logotypes_slider_logotype">	
+										<div class="swiper-slide hero_logotypes_slider_logotype">	
 											
 											<?php display_responsive_image( get_post_thumbnail_id( get_the_ID() ), get_the_title(), $image_sizes, '380px' ); ?>
 											
@@ -115,7 +118,7 @@ if ( !empty($header_img) ) {
 								<?php else : ?>
 									<?php esc_html_e( 'It looks like nothing was found', 'understrap' ); ?>
 								<?php endif; ?>
-
+								</div>
 							</div>
 						</div>
 
@@ -206,14 +209,6 @@ if ( !empty($header_img) ) {
 
 <?php get_footer(); ?>
 
-<?php if ( ! isset( $GLOBALS['slick_scripts_loaded'] ) or false === $GLOBALS['slick_scripts_loaded'] ) : ?>
-	<script defer="defer" src="<?php echo get_stylesheet_directory_uri() . '/js/slick/slick.min.js'; ?>"></script>
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() . '/js/slick/slick.css'; ?>">
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() . '/js/slick/slick-theme.css'; ?>">
-	
-	<?php $GLOBALS['slick_scripts_loaded'] = true; ?>
-	</p>
-<?php endif; ?>
 
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
@@ -224,44 +219,37 @@ if ( !empty($header_img) ) {
 			'load-background': true
 		});
 
-		jQuery('#slick-<?php echo $uuid; ?>').slick({
-			infinite: true,
-			slidesToShow: 6,
-			slidesToScroll: 1,
-			dots: false,
-			arrows: true,
+		const swiper = new Swiper('#swiper-<?php echo $uuid; ?>', {
+			slidesPerView: 1,
 			speed: 300,
-			lazyLoad: 'ondemand',
+			loop: true,
 			autoplay: true,
-			variableWidth: false,
-			responsive: [
-				{
-				breakpoint: 1024,
-				settings: {
-					slidesToShow: 3,
-					slidesToScroll: 1,
-				}
+			breakpoints: {
+				480: {
+					slidesPerView: 1,
 				},
-				{
-				breakpoint: 768,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
-				}
+				768: {
+					slidesPerView: 3,
 				},
-				{
-				breakpoint: 480,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1
+				1024:{
+					slidesPerView: 6
 				}
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			on:{
+				beforeInit: function(){
+					const swiperContainer = document.querySelector('#swiper-<?php echo $uuid; ?>')
+					swiperContainer.classList.remove('swiper-css-mode')
+
+					const hiddenElements = document.querySelectorAll('.hero_logotypes_slider .hidden-important')
+					hiddenElements.forEach(el=> el.classList.remove('hidden-important'))
 				}
-				// You can unslick at a given breakpoint now by adding:
-				// settings: "unslick"
-				// instead of a settings object
-			]
-		});
-		
+			}
+		})	
+			
 	});
 </script>
 
