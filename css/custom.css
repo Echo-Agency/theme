@@ -408,7 +408,6 @@
   }
 }
 
-button.navbar-toggler.collapsed:hover + #navbarNavDropdown,
-button.navbar-toggler.collapsed:focus + #navbarNavDropdown {
-  display: block;
+#recent-posts-3 li:nth-child(3) ~ li {
+  display: none;
 }

@@ -48,6 +48,15 @@ if ( is_post_type_archive( 'case_study' ) ) {
 
 <body <?php body_class( $higher_header ); ?>>
 <?php echo ( $gtm_body ) ? $gtm_body : ''; ?>
+<noscript>
+	<style type="text/css">
+		.navbar:focus-within #navbarNavDropdown,
+		.navbar:focus #navbarNavDropdown,
+		.navbar:hover #navbarNavDropdown {
+			display: block;
+		}
+	</style>
+</noscript>
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
 
