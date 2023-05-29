@@ -411,3 +411,12 @@
 #recent-posts-3 li:nth-child(3) ~ li {
   display: none;
 }
+
+.single-post .columns_images{
+  max-width: 100%;
+    flex: 1 1 auto;
+}
+
+body .home_heroe .line2 {
+  margin: 15px 0 15px 0;
+}

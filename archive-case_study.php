@@ -107,8 +107,8 @@ if ( !empty($header_img) ) {
 										$clients->the_post();
 										?>
 
-										<div class="swiper-slide hero_logotypes_slider_logotype">	
-											
+										<div class="swiper-slide hero_logotypes_slider_logotype">
+
 											<?php display_responsive_image( get_post_thumbnail_id( get_the_ID() ), get_the_title(), $image_sizes, '380px' ); ?>
 
 
@@ -212,11 +212,11 @@ if ( !empty($header_img) ) {
 
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
-		jQuery('[data-vbg]').youtube_background({
-			'mobile': true,
-			'fit-box': true,
-			'load-background': true
-		});
+		// jQuery('[data-vbg]').youtube_background({
+		// 	'mobile': true,
+		// 	'fit-box': true,
+		// 	'load-background': true
+		// });
 
 		const swiper = new Swiper('#swiper-<?php echo $uuid; ?>', {
 			slidesPerView: 1,
@@ -247,8 +247,8 @@ if ( !empty($header_img) ) {
 					hiddenElements.forEach(el=> el.classList.remove('hidden-important'))
 				}
 			}
-		})	
-			
+		})
+
 	});
 </script>
 
