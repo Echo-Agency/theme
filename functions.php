@@ -566,3 +566,17 @@ function custom_wpkses_post_tags( $tags, $context ) {
 
 add_filter( 'wp_kses_allowed_html', 'custom_wpkses_post_tags', 10, 2 );
 
+
+add_action( 'wp_footer', 'newsletter_echo_wp_footer' );
+
+function newsletter_echo_wp_footer() {
+?>
+<script type="text/javascript">
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+if ( '2744' == event.detail.contactFormId ) {
+    window.lintrk('track', { conversion_id: 13832345 });
+    }
+}, false );
+</script>
+<?php
+}
