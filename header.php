@@ -50,9 +50,8 @@ if ( is_post_type_archive( 'case_study' ) ) {
 <?php echo ( $gtm_body ) ? $gtm_body : ''; ?>
 <noscript>
 	<style type="text/css">
-		.navbar:focus-within #navbarNavDropdown,
-		.navbar:focus #navbarNavDropdown,
-		.navbar:hover #navbarNavDropdown {
+
+		.side-menu:checked ~ #navbarNavDropdown{
 			display: block;
 		}
 	</style>
@@ -85,11 +84,13 @@ if ( is_post_type_archive( 'case_study' ) ) {
 
 				<?php do_shortcode( '[display-logo]' ); ?>
 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
+				<input class="side-menu" type="checkbox" id="side-menu" hidden/>
+				<label for="side-menu" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
 					<span class="navbar-toggler-icon">
 						<?php echo icon_menu(); ?>
 					</span>
-				</button>
+				</label>
+
 
 				<!-- The WordPress Menu goes here -->
 				<?php
