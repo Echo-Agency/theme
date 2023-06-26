@@ -83,7 +83,6 @@ if ( ! is_admin() ) {
 		// add script handles to the array below
 		$scripts_to_defer = array(
 			'child-understrap-scripts',
-			'cookie-notice-front',
 			'jquery-core',
 			'jquery-migrate',
 			'rate-my-post',
